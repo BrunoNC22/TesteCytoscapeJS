@@ -3,25 +3,11 @@
 import cytoscape from 'cytoscape';
 import { onMounted } from 'vue';
 
-import BombaDesligada from '../assets/Bomba desligada.svg'
 import Hidrometro from '../assets/Hidrometro.png'
-
-let cy
-
-function getEncodedSvg(svg: string): string {
-  return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
-}
-
-let bombaDesl = new Image()
-
-
-function memoize(ele): any {
-  return { svg: getEncodedSvg(BombaDesligada), width: 50, height: 50 }
-}
 
 
 onMounted(() => {
-  cy = cytoscape({
+  cytoscape({
 
     container: document.getElementById('cy'), // container to render in
 
